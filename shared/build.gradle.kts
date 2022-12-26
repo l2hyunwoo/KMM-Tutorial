@@ -20,8 +20,11 @@ kotlin {
         val commonMain by getting {
             dependencies {
                 with(Dependencies.Koin) {
-                    api(core)
-                    api(test)
+                    implementation(core)
+                    implementation(test)
+                }
+                with(Dependencies.Kotlin) {
+                    implementation(datetime)
                 }
             }
         }
