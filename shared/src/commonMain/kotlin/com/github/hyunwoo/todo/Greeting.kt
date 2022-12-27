@@ -25,6 +25,7 @@ class Greeting {
     fun greet() = "Guess what it is! > ${platform.name.reversed()}!" +
             "\nThere are only ${daysUntilNewYear()} days left until New Year! 🎆"
 
+    @Throws(Exception::class)
     suspend fun greeting(): String {
         val rockets: List<RocketLaunch> = httpClient
             .get("https://api.spacexdata.com/v4/launches")
