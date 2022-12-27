@@ -25,6 +25,12 @@ kotlin {
                 }
                 with(Dependencies.Kotlin) {
                     implementation(datetime)
+                    implementation(coroutines)
+                }
+                implementation(Dependencies.Ktor.Client.core)
+                with(Dependencies.Ktor) {
+                    implementation(serialization)
+                    implementation(contentNegotiation)
                 }
             }
         }
@@ -33,7 +39,11 @@ kotlin {
                 implementation(kotlin("test"))
             }
         }
-        val androidMain by getting
+        val androidMain by getting {
+            dependencies {
+                implementation(Dependencies.Ktor.Client.android)
+            }
+        }
         val androidTest by getting
         val iosX64Main by getting
         val iosArm64Main by getting
@@ -43,6 +53,9 @@ kotlin {
             iosX64Main.dependsOn(this)
             iosArm64Main.dependsOn(this)
             iosSimulatorArm64Main.dependsOn(this)
+            dependencies {
+                implementation(Dependencies.Ktor.Client.ios)
+            }
         }
         val iosX64Test by getting
         val iosArm64Test by getting
@@ -64,4 +77,7 @@ android {
         minSdk = 28
         targetSdk = 33
     }
+}
+dependencies {
+    implementation("androidx.core:core-ktx:+")
 }
