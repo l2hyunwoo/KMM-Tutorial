@@ -45,4 +45,9 @@ dependencies {
         implementation(core)
         implementation(test)
     }
+
+    with(Dependencies.Kotlin) {
+        implementation(datetime)
+        implementation(coroutines)
+    }
 }
