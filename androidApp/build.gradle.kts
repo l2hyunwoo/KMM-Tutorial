@@ -15,6 +15,7 @@ android {
     }
     buildFeatures {
         compose = true
+        viewBinding = true
     }
     composeOptions {
         kotlinCompilerExtensionVersion = "1.3.2"
@@ -39,7 +40,6 @@ dependencies {
     implementation("androidx.compose.foundation:foundation:1.3.1")
     implementation("androidx.compose.material:material:1.3.1")
     implementation("androidx.activity:activity-compose:1.6.1")
-    implementation("androidx.core:core-ktx:1.9.0")
 
     with(Dependencies.Koin) {
         implementation(core)
@@ -49,5 +49,14 @@ dependencies {
     with(Dependencies.Kotlin) {
         implementation(datetime)
         implementation(coroutines)
+    }
+
+    with(Dependencies.Androidx) {
+        implementation(core)
+        implementation(appCompat)
+        implementation(constraintLayout)
+        implementation(swipeRefreshLayout)
+        implementation(recyclerView)
+        implementation(cardView)
     }
 }

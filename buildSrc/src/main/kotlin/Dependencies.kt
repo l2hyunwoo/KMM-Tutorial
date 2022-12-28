@@ -9,6 +9,8 @@ object Dependencies {
         const val datetime = "org.jetbrains.kotlinx:kotlinx-datetime:${Versions.Kotlin.datetime}"
         const val coroutines =
             "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.Kotlin.coroutines}"
+        const val coroutinesAndroid =
+            "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.Kotlin.coroutines}"
     }
 
     object Ktor {
@@ -29,6 +31,14 @@ object Dependencies {
     }
 
     object Androidx {
-        const val core = "androidx.core:core-ktx:1.9.0"
+        const val core = "androidx.core:core-ktx:${Versions.Androidx.core}"
+        const val appCompat = "androidx.appcompat:appcompat:${Versions.Androidx.appComapt}"
+        const val constraintLayout =
+            "androidx.constraintlayout:constraintlayout:${Versions.Androidx.constraintLayout}"
+        const val swipeRefreshLayout =
+            "androidx.swiperefreshlayout:swiperefreshlayout:${Versions.Androidx.swipeRefreshLayout}"
+        const val recyclerView =
+            "androidx.recyclerview:recyclerview:${Versions.Androidx.recyclerView}"
+        const val cardView = "androidx.cardview:cardview:${Versions.Androidx.cardView}"
     }
 }
