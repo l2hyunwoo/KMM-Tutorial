@@ -17,7 +17,7 @@ internal class SpaceDatabaseWrapper(
         }
     }
 
-    internal fun getAllLaunched(): List<RocketLaunch> {
+    internal fun getAllLaunches(): List<RocketLaunch> {
         return dbQuery.selectAllLaunchesInfo(::mapLaunchSelecting)
             .executeAsList()
     }
