@@ -1,5 +1,6 @@
 package com.github.hyunwoo.todo
 
+import com.github.hyunwoo.todo.entity.RocketLaunch
 import io.ktor.client.HttpClient
 import io.ktor.client.call.body
 import io.ktor.client.plugins.contentnegotiation.ContentNegotiation
