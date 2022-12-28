@@ -2,6 +2,7 @@ plugins {
     kotlin("multiplatform")
     id("com.android.library")
     kotlin("plugin.serialization")
+    id("com.squareup.sqldelight")
 }
 
 kotlin {
@@ -33,6 +34,7 @@ kotlin {
                     implementation(serialization)
                     implementation(contentNegotiation)
                 }
+                implementation(Dependencies.SQLDelight.runtime)
             }
         }
         val commonTest by getting {
@@ -43,6 +45,8 @@ kotlin {
         val androidMain by getting {
             dependencies {
                 implementation(Dependencies.Ktor.Client.android)
+                implementation(Dependencies.Androidx.core)
+                implementation(Dependencies.SQLDelight.androidDriver)
             }
         }
         val androidTest by getting
@@ -56,6 +60,7 @@ kotlin {
             iosSimulatorArm64Main.dependsOn(this)
             dependencies {
                 implementation(Dependencies.Ktor.Client.ios)
+                implementation(Dependencies.SQLDelight.iosDriver)
             }
         }
         val iosX64Test by getting
@@ -79,6 +84,9 @@ android {
         targetSdk = 33
     }
 }
-dependencies {
-    implementation("androidx.core:core-ktx:+")
+
+sqldelight {
+    database("SpaceDatabase") {
+        packageName = "com.github.hyunwoo.todo.shared.cache.space"
+    }
 }

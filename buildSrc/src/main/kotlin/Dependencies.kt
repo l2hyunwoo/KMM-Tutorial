@@ -21,4 +21,14 @@ object Dependencies {
         const val serialization = "io.ktor:ktor-serialization-kotlinx-json:${Versions.ktor}"
         const val contentNegotiation = "io.ktor:ktor-client-content-negotiation:${Versions.ktor}"
     }
+
+    object SQLDelight {
+        const val runtime = "com.squareup.sqldelight:runtime:${Versions.sqldelight}"
+        const val androidDriver = "com.squareup.sqldelight:android-driver:${Versions.sqldelight}"
+        const val iosDriver = "com.squareup.sqldelight:native-driver:${Versions.sqldelight}"
+    }
+
+    object Androidx {
+        const val core = "androidx.core:core-ktx:1.9.0"
+    }
 }

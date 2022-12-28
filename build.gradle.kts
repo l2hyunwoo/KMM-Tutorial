@@ -7,6 +7,7 @@ buildscript {
     dependencies {
         classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.7.20")
         classpath("com.android.tools.build:gradle:7.3.1")
+        classpath("com.squareup.sqldelight:gradle-plugin:1.5.4")
     }
 }
 
@@ -17,6 +18,7 @@ plugins {
     kotlin("android").version("1.7.20").apply(false)
     kotlin("multiplatform").version("1.7.20").apply(false)
     kotlin("plugin.serialization").version("1.7.20").apply(false)
+    id("com.squareup.sqldelight").version("1.5.4").apply(false)
 }
 
 tasks.register("clean", Delete::class) {

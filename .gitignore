@@ -84,4 +84,7 @@ xcuserdata/
 /*.gcno
 **/xcshareddata/WorkspaceSettings.xcsettings
 
+.DS_STORE
+*.sq
+
 # End of https://www.toptal.com/developers/gitignore/api/kotlin,android,xcode
